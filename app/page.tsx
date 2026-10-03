@@ -1,3 +1,6 @@
+const PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=com.barberkeylut.app";
+
 const benefits = [
   {
     title: "Agenda desde la app",
@@ -21,24 +24,34 @@ const steps = [
 
 const barbers = [
   {
-    name: "Barbero 1",
+    name: "Charly",
     role: "Cortes clasicos y modernos",
     description: "Precision, detalle y estilo para que salgas listo para cualquier ocasion.",
   },
   {
-    name: "Barbero 2",
+    name: "Jose",
     role: "Fade y perfilado",
     description: "Degradados limpios, contornos definidos y acabado profesional.",
   },
   {
-    name: "Barbero 3",
+    name: "Smith",
     role: "Barba y cuidado personal",
     description: "Arreglo de barba, lineas elegantes y una experiencia relajada.",
   },
   {
-    name: "Barbero 4",
+    name: "Dani",
     role: "Estilo personalizado",
     description: "Te ayuda a encontrar el corte que mejor combina con tu rostro y tu estilo.",
+  },
+  {
+    name: "Jeison",
+    role: "Diseños y freestyle",
+    description: "Lineas, figuras y detalles creativos para un corte que no pasa desapercibido.",
+  },
+  {
+    name: "David",
+    role: "Cortes urbanos",
+    description: "Tendencias actuales con acabado limpio para renovar tu look.",
   },
 ];
 
@@ -80,11 +93,38 @@ export default function Home() {
             </p>
             <div className="hero-actions">
               <a
-                className="button primary"
-                href="/keylut-app-release.apk"
-                download
+                className="play-button"
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Descargar Barber Keylut en Google Play"
               >
-                Descargar app
+                <svg
+                  className="play-logo"
+                  viewBox="0 0 24 26"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="#00d7fe"
+                    d="M1.2 0.6C0.9 0.9 0.7 1.4 0.7 2v22c0 0.6 0.2 1.1 0.5 1.4L13.6 13z"
+                  />
+                  <path
+                    fill="#00f076"
+                    d="M17.7 8.9L13.6 13 1.2 0.6c0.4-0.4 1.1-0.5 1.9-0.1z"
+                  />
+                  <path
+                    fill="#ffc900"
+                    d="M22.1 11.4l-4.4-2.5-4.1 4.1 4.1 4.1 4.4-2.5c1.3-0.7 1.3-2.5 0-3.2z"
+                  />
+                  <path
+                    fill="#ff3a44"
+                    d="M13.6 13L1.2 25.4c0.4 0.4 1.1 0.5 1.9 0.1l14.6-8.4z"
+                  />
+                </svg>
+                <span className="play-text">
+                  <small>Disponible en</small>
+                  <strong>Google Play</strong>
+                </span>
               </a>
               <a
                 className="button secondary"
@@ -135,7 +175,7 @@ export default function Home() {
 
       <section className="section" id="beneficios">
         <p className="eyebrow">Mas que una cita</p>
-        <h2>Una app para mantener a tus clientes conectados</h2>
+        <h2>Agenda, acumula y gana desde tu celular</h2>
         <div className="benefits-grid">
           {benefits.map((benefit) => (
             <article className="benefit-card" key={benefit.title}>
